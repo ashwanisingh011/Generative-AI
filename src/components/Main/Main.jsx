@@ -14,6 +14,20 @@ const Main = () => {
     input,
   } = useContext(Context);
 
+  const handleKeyDown = (e) => {
+    if(e.key === 'Enter') {
+      e.preventDefault();
+      handleSubmit();
+    }
+  }
+
+  const handleSubmit = () => {
+    if(input.trim()==="") return;
+    onSent();
+    setInput("");
+  }
+    
+
   return (
     <div className="main">
       <div className="nav">
@@ -69,7 +83,9 @@ const Main = () => {
         <div className="main-button">
           <div className="search-box">
             <input
+
               onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
               value={input}
               type="text"
               placeholder="Enter a prompt here"
