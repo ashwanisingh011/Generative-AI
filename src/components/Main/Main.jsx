@@ -3,6 +3,7 @@ import "./Main.css";
 import { assets } from "../../assets/assets";
 import { Context } from "../../context/Context";
 import { useContext } from "react";
+
 const Main = () => {
   const {
     onSent,
@@ -31,7 +32,7 @@ const Main = () => {
     <div className="main">
       <div className="nav">
         <p>VIOLA</p>
-        <img src={assets.user} alt="" />
+        <img src={assets.user_icon} alt="" />
       </div>
       {!showResult ? (
         <>
