@@ -15,18 +15,17 @@ const Main = () => {
   } = useContext(Context);
 
   const handleKeyDown = (e) => {
-    if(e.key === 'Enter') {
+    if (e.key === "Enter") {
       e.preventDefault();
       handleSubmit();
     }
-  }
+  };
 
   const handleSubmit = () => {
-    if(input.trim()==="") return;
+    if (input.trim() === "") return;
     onSent();
     setInput("");
-  }
-    
+  };
 
   return (
     <div className="main">
@@ -69,13 +68,11 @@ const Main = () => {
           </div>
           <div className="result-data">
             <img src={assets.gemini_icon} alt="" />
-            {loading ? 
-              <div className="loader">
-               
-              </div>                                                                                                                    /* If loading  is true then it will generate a loading animation or if loading is false it generates the result */
-             : 
+            {loading ? (
+              <div className="loader"></div> /* If loading  is true then it will generate a loading animation or if loading is false it generates the result */
+            ) : (
               <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
-            }
+            )}
           </div>
         </div>
       )}
@@ -83,7 +80,6 @@ const Main = () => {
         <div className="main-button">
           <div className="search-box">
             <input
-
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               value={input}
@@ -93,7 +89,9 @@ const Main = () => {
             <div>
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
-            {input ? <img onClick={() => onSent()} src={assets.send_icon} alt="" /> : null}
+              {input ? (
+                <img onClick={() => onSent()} src={assets.send_icon} alt="" />
+              ) : null}
             </div>
           </div>
           <p className="bottom-info">
