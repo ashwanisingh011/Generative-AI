@@ -31,7 +31,7 @@ const Main = () => {
     <div className="main">
       <div className="nav">
         <p>VIOLA</p>
-        <img src={assets.user_icon} alt="" />
+        <img src={assets.user} alt="" />
       </div>
       {!showResult ? (
         <>
